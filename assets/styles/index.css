@@ -137,6 +137,7 @@ img{
 }
 
 /* Our team */
+
 .our_team{
     margin-top: 1.4rem;
     display: grid;
@@ -147,6 +148,7 @@ img{
     width: 100%;
     box-shadow: var(--shadow);
 }
+/* Footer */
 footer{
     margin-top: 2rem;
     background: var(--dark);
