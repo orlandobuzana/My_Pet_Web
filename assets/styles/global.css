@@ -1,5 +1,4 @@
 /* variables */
-
 :root{
     --primary: #ddd;
     --dark:#333;
@@ -11,7 +10,6 @@ html{
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--dark);
-
 }
 body{
     background-color: #ccc;
@@ -40,8 +38,7 @@ img{
     padding: 0;
     list-style: none;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-  
+}  
 .main-nav a {
    background: var(--primary);
    display: block;
@@ -57,6 +54,7 @@ img{
     background-color: var(--dark);
     color:var(--light);
 }
+
 /* Top Container*/
 .top-container{
     display:grid;
@@ -70,7 +68,7 @@ img{
 .showcase{
     grid-area: showcase;
     min-height: 400px;
-    background:url();
+    background:url(../images/dogface.jpg);
     background-size:cover;
     background-position:center;
     padding:3rem;
@@ -78,15 +76,118 @@ img{
     flex-direction:column;
     align-items:start;
     justify-content: center;
+    box-shadow: var(--shadow);
+}
+.showcase h1{
+    font-size:4rem;
+    margin-bottom: 0;
+    color: var(--dark);
+    text-shadow: var(--shadow)
+}
+.showcase p{
+    font-size: 1.3rem;
+    margin-top: 0;
+    color: var(--primary);
+    text-shadow: var(--shadow)
+}
 
+/*top-box*/
+.top-box{
+    background: var(--primary);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    box-shadow: var(--shadow);
+    padding:1.5rem;   
+}
+.top-box .price{
+    font-size: 2.5rem;
 }
 .top-box-a{
     grid-area: top-box-a;
-
 }
 .top-box-b{
     grid-area: top-box-b;
-
 }
 
+/* Boxes*/
+.boxes{
+    margin-top:1.4rem;
+    margin-bottom:1.4rem;
+    display:grid;
+    grid-gap:20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
 
+}
+.box {
+    background-color: var(--primary);
+    text-align:center;
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow);
+}
+
+/* Info */
+.info{
+    background: var(--primary);
+    box-shadow: 3rem;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(2,1fr);
+    padding: 3rem;
+}
+
+/* Our team */
+.our_team{
+    margin-top: 1.4rem;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+}
+.our_team img{
+    width: 100%;
+    box-shadow: var(--shadow);
+}
+footer{
+    margin-top: 2rem;
+    background: var(--dark);
+    color: var(--light);
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Media Queries */
+@media (max-width: 700px) {
+    .top-container {
+      grid-template-areas:
+        'showcase showcase'
+        'top-box-a top-box-b';
+    }
+  
+    .showcase h1 {
+      font-size: 2.5rem;
+    }
+  
+    .main-nav ul {
+      grid-template-columns: 1fr;
+    }
+  
+    .info {
+      grid-template-columns: 1fr;
+    }
+  
+    .info .btn {
+      display: block;
+      text-align: center;
+      margin: auto;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .top-container {
+      grid-template-areas:
+        'showcase'
+        'top-box-a'
+        'top-box-b';
+    }
+  }
+  
